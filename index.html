@@ -1,0 +1,117 @@
+﻿<html>
+<head>
+<link href="css/ratchet.css" rel="stylesheet">
+<link href="css/ratchet-theme-android1.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/snap.css" rel="stylesheet">
+<script src="css/source-sans-pro.js"></script>
+</head>
+<body>
+<script id="home-menu-tpl" type="text/x-handlebars-template">
+	<div class="snap-drawers">
+		<div class="snap-drawer snap-drawer-left" id="scroll-menu">
+			<ul>
+			    <li>
+					<ul class="filter_items"></ul>
+				</li>
+				<li><h4>>>经方分类</h4></li>
+				{{#.}}
+				<li><a href="#" class="home_menu">{{this.c_name}}</a></li>
+				{{/.}}
+			</ul>
+			
+		</div>
+	</div>
+</script>
+
+<script id="sub-menu-tpl" type="text/x-handlebars-template">
+	<div class="snap-drawers">
+		<div class="snap-drawer snap-drawer-left" id="scroll-menu">
+			<ul class='subMenu-list'></ul>
+		</div>
+	</div>
+</script>
+
+<script id="menu-li-tpl" type="text/x-handlebars-template">
+    {{#.}}
+    <li><a href="#items/{{this.id}}" class="sub-menu-item">{{this.name}}  {{this.cat2}} </a></li>
+    {{/.}}
+</script>
+
+<script id="filterMenu-li-tpl" type="text/x-handlebars-template">
+{{#.}}
+<li><a href="#" filter_id="{{this.id}}" class="filter_menu">{{this.title}}</a></li>
+{{/.}}
+</script>
+
+
+<script id="header-tpl" type="text/x-handlebars-template">
+	  <a class="icon icon-bars pull-left showmenu"></a>
+	  <h1 class="title">经方检索系统</h1>
+	  <div><input class='search-key' type="search" value="方名/组成/功用"/></div>
+</script>
+
+<script id="subheader-tpl" type="text/x-handlebars-template">
+	  <a class="icon icon-bars pull-left showmenu"></a>
+	  <a class="icon icon-home pull-right showsetting" href="#"></a>
+	  <h1 class="title">经方检索系统</h1>
+</script>
+
+<script id="home-tpl" type="text/x-handlebars-template">
+	<div id="left_div"></div>
+	<div id="content" class="snap-content">
+		<header class="bar bar-nav"></header>
+		<div class="scroll content_home"><ul class="item-list table-view"></ul></div>
+		<div id="footer"></div>
+	</div>
+</script>
+
+
+<script id="item-li-tpl" type="text/x-handlebars-template">
+    {{#.}}
+    <li class="table-view-cell home_list_item" url="#items/{{this.id}}">{{this.name}} {{this.symptom}} </li>
+    {{/.}}
+</script>
+
+
+<script id="item-tpl" type="text/x-handlebars-template">
+    <div id="left_div"></div>
+	<div id="content" class="snap-content">
+		<header class="bar bar-nav"></header>
+		<div class="scroll content_sub"><div class="details content-padded"></div></div>
+		<nav class="bar bar-tab">
+		  <span class="tab-item active bt_prev">
+			上一个
+		  </span>
+		  <span class="tab-item active bt_next">
+			下一个
+		  </span>
+		</nav>
+	</div>
+</script>
+
+
+<script id="detail-tpl" type="text/x-handlebars-template">
+		 <h3>{{name}}</h3><h5>{{cat1}}</h5>
+        <ul class="table-view" >
+            <li><span class="label">组成:</span><br/>{{formula}}</a></li>
+			<li><span class="label">症状:</span><br/>{{symptom}}</a></li>
+        </ul>
+</script>
+
+<script src="phonegap.js"></script>
+<script src="lib/handlebars.js"></script>
+<script src="lib/jquery2.1.js"></script>
+<script src="lib/iscroll.js"></script>
+<script src="lib/snap.js"></script>
+<script src="lib/hammer.min.js"></script>
+<script src="lib/jqimageloader.js"></script>
+<script src="js/storage/memory-store.js"></script>
+<script src="js/common/HeaderView.js"></script>
+<script src="js/common/SideMenuView.js"></script>
+<script src="js/DetailView.js"></script>
+<script src="js/HomeView.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
